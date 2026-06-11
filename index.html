@@ -3,25 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Redesconéctate, centro de psicología sanitaria en Málaga para ansiedad, autoestima, bienestar digital, TCA, familias y reconexión emocional.">
-  <title>Redesconéctate | Psicología, bienestar y reconexión</title>
+  <meta name="description" content="Redesconecta, centro de psicología sanitaria en Málaga para ansiedad, autoestima, TCA, bienestar digital, familias y reconexión emocional.">
+  <title>Redesconecta | Psicología sanitaria en Málaga</title>
   <style>
     :root {
-      --ink: #26372b;
-      --green: #48634d;
-      --green-deep: #314a37;
-      --sage: #dbe4d4;
-      --mint: #eef4ea;
-      --clay: #c9825f;
-      --peach: #f4d4bd;
-      --rose: #ad6874;
-      --blue: #4f7680;
-      --paper: #fffaf2;
-      --cream: #f7efe3;
-      --white: #ffffff;
-      --muted: #657066;
-      --line: rgba(38, 55, 43, 0.16);
-      --shadow: 0 22px 55px rgba(47, 57, 43, 0.14);
+      --forest: #243d31;
+      --leaf: #617760;
+      --moss: #d8e0d0;
+      --mist: #edf4f0;
+      --paper: #fbf5ec;
+      --porcelain: #fffdf8;
+      --ink: #17221c;
+      --muted: #667066;
+      --terracotta: #bf7456;
+      --rose: #a7636e;
+      --blue: #4c7580;
+      --gold: #d7b36a;
+      --line: rgba(23, 34, 28, 0.14);
+      --shadow: 0 26px 80px rgba(28, 41, 34, 0.16);
       --serif: Georgia, "Times New Roman", serif;
       --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
@@ -39,7 +38,7 @@
       color: var(--ink);
       background: var(--paper);
       font-family: var(--sans);
-      line-height: 1.6;
+      line-height: 1.55;
       text-rendering: optimizeLegibility;
     }
 
@@ -53,21 +52,22 @@
       text-decoration: none;
     }
 
-    p,
     h1,
     h2,
-    h3 {
+    h3,
+    p {
       margin: 0;
     }
 
     .site-header {
       position: fixed;
       top: 0;
+      right: 0;
       left: 0;
-      z-index: 30;
-      width: 100%;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.28);
-      background: rgba(255, 250, 242, 0.84);
+      z-index: 20;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(23, 34, 28, 0.46);
+      color: var(--porcelain);
       backdrop-filter: blur(18px);
     }
 
@@ -75,8 +75,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: min(1120px, calc(100% - 36px));
-      min-height: 74px;
+      width: min(1180px, calc(100% - 40px));
+      min-height: 76px;
       margin: 0 auto;
       gap: 24px;
     }
@@ -84,66 +84,63 @@
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
       min-width: 0;
+      gap: 12px;
       font-family: var(--serif);
-      font-size: 1.12rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      font-size: 1.08rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--green-deep);
+      white-space: nowrap;
     }
 
-    .brand img {
-      width: 44px;
-      height: 44px;
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255, 253, 248, 0.55);
       border-radius: 50%;
-      object-fit: cover;
-      object-position: center top;
+    }
+
+    .brand svg {
+      width: 25px;
+      height: 25px;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.75;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
       gap: 24px;
-      color: var(--green-deep);
-      font-size: 0.94rem;
-      font-weight: 650;
+      color: rgba(255, 253, 248, 0.86);
+      font-size: 0.9rem;
+      font-weight: 750;
     }
 
     .nav-links a {
-      position: relative;
       padding: 8px 0;
     }
 
-    .nav-links a::after {
-      position: absolute;
-      right: 0;
-      bottom: 2px;
-      left: 0;
-      height: 2px;
-      content: "";
-      background: var(--clay);
-      transform: scaleX(0);
-      transform-origin: center;
-      transition: transform 180ms ease;
-    }
-
-    .nav-links a:hover::after {
-      transform: scaleX(1);
+    .nav-links a:hover {
+      color: var(--porcelain);
     }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
-      padding: 0 20px;
+      min-height: 48px;
+      padding: 0 21px;
       border: 1px solid transparent;
       border-radius: 999px;
-      font-weight: 750;
+      font-weight: 800;
       line-height: 1;
-      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      transition: transform 170ms ease, box-shadow 170ms ease, background 170ms ease;
     }
 
     .button:hover {
@@ -151,43 +148,37 @@
     }
 
     .button-primary {
-      color: var(--white);
-      background: var(--green-deep);
-      box-shadow: 0 14px 26px rgba(49, 74, 55, 0.22);
+      color: var(--porcelain);
+      background: var(--rose);
+      box-shadow: 0 18px 38px rgba(84, 35, 45, 0.22);
     }
 
     .button-primary:hover {
-      background: #223729;
-      box-shadow: 0 18px 34px rgba(49, 74, 55, 0.28);
+      background: #925762;
     }
 
-    .button-soft {
-      color: var(--green-deep);
-      background: rgba(255, 250, 242, 0.82);
-      border-color: rgba(49, 74, 55, 0.2);
+    .button-outline {
+      color: var(--porcelain);
+      border-color: rgba(255, 253, 248, 0.46);
+      background: rgba(255, 253, 248, 0.08);
     }
 
-    .hero .button-primary {
-      background: var(--rose);
-      box-shadow: 0 14px 26px rgba(80, 36, 45, 0.24);
-    }
-
-    .hero .button-primary:hover {
-      background: #955a64;
+    .button-dark {
+      color: var(--porcelain);
+      background: var(--forest);
+      box-shadow: 0 18px 38px rgba(36, 61, 49, 0.22);
     }
 
     .hero {
       position: relative;
-      display: grid;
-      min-height: 92vh;
-      padding: 126px 0 76px;
+      min-height: 88svh;
+      padding: 132px 0 56px;
       overflow: hidden;
+      color: var(--porcelain);
+      background:
+        linear-gradient(90deg, rgba(20, 29, 24, 0.74) 0%, rgba(20, 29, 24, 0.56) 39%, rgba(20, 29, 24, 0.12) 74%),
+        url("redesconectate_assets_v2/hero-terapia-malaga.png") center / cover no-repeat;
       isolation: isolate;
-      background-image:
-        linear-gradient(90deg, rgba(24, 35, 28, 0.7) 0%, rgba(24, 35, 28, 0.48) 38%, rgba(255, 250, 242, 0.16) 70%),
-        url("redesconectate_recursos_individuales/05_hero_desconecta_reconecta.png");
-      background-position: center;
-      background-size: cover;
     }
 
     .hero::after {
@@ -195,61 +186,70 @@
       right: 0;
       bottom: 0;
       left: 0;
-      height: 120px;
+      height: 150px;
       content: "";
-      background: linear-gradient(180deg, rgba(255, 250, 242, 0), var(--paper));
+      background: linear-gradient(180deg, rgba(251, 245, 236, 0), var(--paper));
       z-index: -1;
     }
 
     .hero-inner {
       display: grid;
       align-content: center;
-      width: min(1120px, calc(100% - 36px));
+      width: min(1180px, calc(100% - 40px));
+      min-height: calc(88svh - 188px);
       margin: 0 auto;
     }
 
-    .hero-copy {
-      width: min(650px, 100%);
-      color: var(--white);
+    .hero-content {
+      width: min(720px, 100%);
+      padding-top: 40px;
     }
 
-    .eyebrow {
+    .kicker {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      margin-top: 0;
       margin-bottom: 18px;
-      font-size: 0.82rem;
-      font-weight: 800;
+      color: rgba(255, 253, 248, 0.82);
+      font-size: 0.78rem;
+      font-weight: 900;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .eyebrow::before {
+    .kicker::before {
       width: 34px;
       height: 1px;
       content: "";
       background: currentColor;
     }
 
+    .intro .kicker,
+    .areas .kicker,
+    .method .kicker,
+    .team .kicker {
+      color: var(--rose);
+    }
+
     h1,
-    h2 {
+    h2,
+    .display {
       font-family: var(--serif);
       font-weight: 500;
-      line-height: 1.06;
       letter-spacing: 0;
+      line-height: 1;
     }
 
     h1 {
-      max-width: 720px;
-      font-size: clamp(3.5rem, 7vw, 6.8rem);
+      max-width: 740px;
+      font-size: clamp(4rem, 8vw, 7.8rem);
     }
 
-    .hero-copy p:not(.eyebrow) {
-      max-width: 610px;
+    .hero-subtitle {
+      width: min(610px, 100%);
       margin-top: 24px;
-      color: rgba(255, 255, 255, 0.9);
-      font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+      color: rgba(255, 253, 248, 0.89);
+      font-size: clamp(1.05rem, 1.5vw, 1.28rem);
     }
 
     .hero-actions {
@@ -259,296 +259,330 @@
       margin-top: 34px;
     }
 
-    .hero-note {
+    .hero-metrics {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      width: min(840px, 100%);
-      margin-top: 64px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.24);
-      border-radius: 8px;
-      background: rgba(255, 250, 242, 0.16);
-      backdrop-filter: blur(15px);
+      width: min(860px, 100%);
+      margin-top: 58px;
+      border-top: 1px solid rgba(255, 253, 248, 0.22);
+      border-bottom: 1px solid rgba(255, 253, 248, 0.22);
     }
 
-    .hero-note span {
-      padding: 17px 18px;
-      color: rgba(255, 255, 255, 0.88);
-      font-size: 0.92rem;
-      font-weight: 700;
-      text-align: center;
+    .metric {
+      padding: 20px 22px 20px 0;
     }
 
-    .hero-note span + span {
-      border-left: 1px solid rgba(255, 255, 255, 0.22);
+    .metric + .metric {
+      padding-left: 22px;
+      border-left: 1px solid rgba(255, 253, 248, 0.22);
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--porcelain);
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 500;
+      line-height: 1.15;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 4px;
+      color: rgba(255, 253, 248, 0.74);
+      font-size: 0.9rem;
     }
 
     .section {
-      padding: 94px 0;
+      padding: 104px 0;
     }
 
-    .section-tight {
-      padding: 72px 0;
+    .section-compact {
+      padding: 78px 0;
     }
 
     .container {
-      width: min(1120px, calc(100% - 36px));
+      width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
     }
 
     .section-head {
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.7fr);
-      gap: 44px;
+      grid-template-columns: minmax(0, 0.95fr) minmax(290px, 0.64fr);
       align-items: end;
-      margin-bottom: 42px;
+      gap: 48px;
+      margin-bottom: 44px;
     }
 
     h2 {
-      color: var(--green-deep);
-      font-size: clamp(2.15rem, 4vw, 4.1rem);
+      color: var(--forest);
+      font-size: clamp(2.4rem, 4.8vw, 5rem);
     }
 
-    .section-head p,
-    .lead {
+    .section-copy {
       color: var(--muted);
       font-size: 1.05rem;
+    }
+
+    .section-copy strong {
+      color: var(--forest);
     }
 
     .intro {
       background: var(--paper);
     }
 
-    .intro-grid {
+    .intro-layout {
       display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.75fr);
+      grid-template-columns: minmax(280px, 0.55fr) minmax(0, 1fr);
       gap: 56px;
       align-items: center;
     }
 
-    .intro-copy h2 {
-      max-width: 740px;
-      margin-bottom: 24px;
-    }
-
-    .intro-copy p + p {
-      margin-top: 18px;
-    }
-
-    .intro-copy strong {
-      color: var(--green-deep);
-    }
-
-    .room-photo {
-      position: relative;
+    .intro-image {
       overflow: hidden;
       border-radius: 8px;
       box-shadow: var(--shadow);
     }
 
-    .room-photo img {
+    .intro-image img {
       width: 100%;
-      aspect-ratio: 1 / 1.03;
+      aspect-ratio: 4 / 5;
       object-fit: cover;
     }
 
-    .audiences {
-      background: linear-gradient(180deg, var(--mint), #f9f4ea);
-    }
-
-    .audience-strip {
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.6);
-    }
-
-    .audience-strip img {
-      width: 100%;
-      min-height: 188px;
-      object-fit: cover;
-    }
-
-    .focus-grid {
+    .intro-panel {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 28px;
+      gap: 24px;
     }
 
-    .focus-card {
-      min-height: 210px;
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--white);
-      box-shadow: 0 12px 30px rgba(47, 57, 43, 0.08);
-    }
-
-    .focus-card h3 {
-      margin-bottom: 10px;
-      color: var(--green-deep);
-      font-family: var(--serif);
-      font-size: 1.34rem;
-      font-weight: 600;
-      line-height: 1.15;
-    }
-
-    .focus-card p {
+    .intro-panel p {
       color: var(--muted);
-      font-size: 0.96rem;
+      font-size: 1.08rem;
     }
 
-    .focus-card:nth-child(2) {
-      border-top: 4px solid var(--clay);
-    }
-
-    .focus-card:nth-child(3) {
-      border-top: 4px solid var(--blue);
-    }
-
-    .focus-card:nth-child(4) {
-      border-top: 4px solid var(--rose);
-    }
-
-    .approach {
-      background: var(--paper);
-    }
-
-    .approach-grid {
-      display: grid;
-      grid-template-columns: minmax(280px, 0.68fr) minmax(0, 1fr);
-      gap: 54px;
-      align-items: center;
-    }
-
-    .approach-visual {
-      display: grid;
-      gap: 18px;
-    }
-
-    .approach-visual img {
-      width: 100%;
-      border-radius: 8px;
-      object-fit: cover;
-      box-shadow: var(--shadow);
-    }
-
-    .method-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .method-item {
-      display: grid;
-      grid-template-columns: 48px minmax(0, 1fr);
-      gap: 18px;
-      align-items: start;
-      padding: 22px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .method-mark {
-      display: grid;
-      place-items: center;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      color: var(--green-deep);
-      background: #e8d7d3;
-      font-family: var(--serif);
-      font-size: 1.05rem;
-      font-weight: 700;
-    }
-
-    .method-item h3 {
-      color: var(--green-deep);
-      font-size: 1.05rem;
-    }
-
-    .method-item p {
-      margin-top: 4px;
-      color: var(--muted);
-    }
-
-    .values {
-      background: linear-gradient(135deg, #f4e8d9 0%, #e6eff0 100%);
-    }
-
-    .values-panel {
-      overflow: hidden;
-      border: 1px solid rgba(49, 74, 55, 0.18);
-      border-radius: 8px;
-      background: var(--white);
-    }
-
-    .values-panel img {
-      width: 100%;
-      min-height: 220px;
-      object-fit: cover;
-    }
-
-    .team {
-      background: var(--paper);
-    }
-
-    .team-photo {
-      overflow: hidden;
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-      background: var(--cream);
-    }
-
-    .team-photo img {
-      width: 100%;
-      aspect-ratio: 3 / 2;
-      object-fit: cover;
-      object-position: center top;
-    }
-
-    .team-grid {
+    .signature {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 22px;
+      gap: 14px;
+      margin-top: 14px;
     }
 
-    .team-card {
-      min-height: 248px;
-      padding: 26px;
+    .signature-item {
+      padding: 18px;
+      border-left: 3px solid var(--terracotta);
+      background: rgba(255, 253, 248, 0.7);
+    }
+
+    .signature-item:nth-child(2) {
+      border-color: var(--blue);
+    }
+
+    .signature-item:nth-child(3) {
+      border-color: var(--rose);
+    }
+
+    .signature-item strong {
+      display: block;
+      color: var(--forest);
+      line-height: 1.2;
+    }
+
+    .signature-item span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .areas {
+      background: linear-gradient(180deg, var(--mist), #f8efe4);
+    }
+
+    .area-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .area-card {
+      position: relative;
+      min-height: 254px;
+      padding: 28px;
+      overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: var(--white);
+      background: rgba(255, 253, 248, 0.82);
+      box-shadow: 0 16px 46px rgba(28, 41, 34, 0.08);
     }
 
-    .team-card h3 {
-      color: var(--green-deep);
-      font-family: var(--serif);
-      font-size: 1.7rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .area-card:nth-child(1),
+    .area-card:nth-child(2) {
+      grid-column: span 6;
     }
 
-    .team-card .role {
-      margin-top: 8px;
-      color: var(--clay);
-      font-weight: 800;
+    .area-card:nth-child(n+3) {
+      grid-column: span 4;
     }
 
-    .team-card p {
-      margin-top: 16px;
-      color: var(--muted);
-      font-size: 0.96rem;
+    .area-card::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      content: "";
+      background: var(--terracotta);
     }
 
-    .process {
-      background: linear-gradient(180deg, #eef4ea, #fffaf2);
+    .area-card:nth-child(2)::before {
+      background: var(--blue);
     }
 
-    .process-grid {
+    .area-card:nth-child(3)::before {
+      background: var(--rose);
+    }
+
+    .area-card:nth-child(4)::before {
+      background: var(--gold);
+    }
+
+    .area-card:nth-child(5)::before {
+      background: var(--leaf);
+    }
+
+    .area-icon {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      place-items: center;
+      width: 54px;
+      height: 54px;
+      margin-bottom: 24px;
+      border-radius: 50%;
+      color: var(--forest);
+      background: var(--moss);
+    }
+
+    .area-icon svg {
+      width: 27px;
+      height: 27px;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.7;
+    }
+
+    .area-card h3 {
+      color: var(--forest);
+      font-family: var(--serif);
+      font-size: 1.62rem;
+      font-weight: 500;
+      line-height: 1.12;
+    }
+
+    .area-card p {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .visual-band {
+      background: var(--forest);
+      color: var(--porcelain);
+    }
+
+    .visual-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(280px, 0.68fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .feature-image {
+      overflow: hidden;
+      border-radius: 8px;
+      background: rgba(255, 253, 248, 0.08);
+    }
+
+    .feature-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+    }
+
+    .feature-copy {
+      display: grid;
+      align-content: center;
+      padding: 42px;
+      border: 1px solid rgba(255, 253, 248, 0.16);
+      border-radius: 8px;
+    }
+
+    .feature-copy h2 {
+      color: var(--porcelain);
+      font-size: clamp(2.3rem, 4.2vw, 4.5rem);
+    }
+
+    .feature-copy p {
+      margin-top: 22px;
+      color: rgba(255, 253, 248, 0.75);
+      font-size: 1.05rem;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .feature-list span {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255, 253, 248, 0.9);
+      font-weight: 750;
+    }
+
+    .feature-list span::before {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      content: "";
+      background: var(--terracotta);
+    }
+
+    .method {
+      background: var(--paper);
+    }
+
+    .method-layout {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1fr);
+      gap: 56px;
+      align-items: start;
+    }
+
+    .method-sticky {
+      position: sticky;
+      top: 104px;
+    }
+
+    .method-photo {
+      margin-top: 32px;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .method-photo img {
+      width: 100%;
+      aspect-ratio: 5 / 4;
+      object-fit: cover;
+    }
+
+    .steps {
+      display: grid;
       gap: 1px;
       overflow: hidden;
       border: 1px solid var(--line);
@@ -556,173 +590,248 @@
       background: var(--line);
     }
 
-    .process-step {
-      min-height: 212px;
-      padding: 28px;
-      background: rgba(255, 255, 255, 0.74);
+    .step {
+      display: grid;
+      grid-template-columns: 86px minmax(0, 1fr);
+      gap: 28px;
+      padding: 30px;
+      background: rgba(255, 253, 248, 0.76);
     }
 
-    .process-step span {
-      color: var(--clay);
+    .step-number {
+      color: var(--terracotta);
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+
+    .step h3 {
+      color: var(--forest);
+      font-size: 1.12rem;
+      line-height: 1.25;
+    }
+
+    .step p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .team {
+      background: linear-gradient(180deg, #f7efe4, var(--mist));
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .team-card {
+      min-height: 292px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 248, 0.78);
+    }
+
+    .team-card h3 {
+      color: var(--forest);
       font-family: var(--serif);
       font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    .process-step h3 {
+    .team-card .role {
+      margin-top: 12px;
+      color: var(--rose);
+      font-weight: 850;
+      line-height: 1.3;
+    }
+
+    .team-card p {
       margin-top: 18px;
-      color: var(--green-deep);
-      font-size: 1.08rem;
+      color: var(--muted);
     }
 
-    .process-step p {
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 0.95rem;
+    .split-showcase {
+      display: grid;
+      grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+      gap: 18px;
+      margin-top: 56px;
+    }
+
+    .showcase-small,
+    .showcase-wide {
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .showcase-small img,
+    .showcase-wide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .showcase-small img {
+      aspect-ratio: 4 / 5;
+    }
+
+    .showcase-wide img {
+      aspect-ratio: 16 / 10;
     }
 
     .cta {
       position: relative;
       overflow: hidden;
-      color: var(--white);
-      background: var(--green-deep);
-    }
-
-    .cta::before {
-      position: absolute;
-      inset: 0;
-      content: "";
-      background-image:
-        linear-gradient(90deg, rgba(49, 74, 55, 0.9), rgba(49, 74, 55, 0.72)),
-        url("redesconectate_recursos_individuales/08_cta_espacio_seguro.png");
-      background-position: center right;
-      background-size: auto 118%;
-      opacity: 0.9;
+      background:
+        linear-gradient(90deg, rgba(23, 34, 28, 0.88), rgba(23, 34, 28, 0.62)),
+        url("redesconectate_assets_v2/bienestar-digital.png") center / cover no-repeat;
+      color: var(--porcelain);
     }
 
     .cta-inner {
-      position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 0.8fr) minmax(280px, 0.58fr);
+      grid-template-columns: minmax(0, 0.92fr) minmax(280px, 0.52fr);
       gap: 44px;
       align-items: center;
     }
 
     .cta h2 {
-      color: var(--white);
+      color: var(--porcelain);
     }
 
-    .cta p:not(.eyebrow) {
-      max-width: 680px;
-      margin-top: 20px;
-      color: rgba(255, 255, 255, 0.88);
+    .cta p {
+      width: min(660px, 100%);
+      margin-top: 22px;
+      color: rgba(255, 253, 248, 0.8);
       font-size: 1.08rem;
     }
 
-    .contact-panel {
+    .contact {
       padding: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.24);
+      border: 1px solid rgba(255, 253, 248, 0.2);
       border-radius: 8px;
-      background: rgba(255, 250, 242, 0.12);
-      backdrop-filter: blur(12px);
+      background: rgba(255, 253, 248, 0.12);
+      backdrop-filter: blur(14px);
     }
 
-    .contact-panel h3 {
-      margin-bottom: 14px;
+    .contact h3 {
       font-family: var(--serif);
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       font-weight: 500;
     }
 
-    .contact-line {
-      padding: 14px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-      color: rgba(255, 255, 255, 0.9);
-      font-weight: 700;
+    .contact-row {
+      padding: 17px 0;
+      border-top: 1px solid rgba(255, 253, 248, 0.2);
+      color: rgba(255, 253, 248, 0.9);
+      font-weight: 750;
     }
 
-    .contact-line small {
+    .contact-row:first-of-type {
+      margin-top: 18px;
+    }
+
+    .contact-row small {
       display: block;
-      margin-bottom: 3px;
-      color: rgba(255, 255, 255, 0.68);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
+      margin-bottom: 4px;
+      color: rgba(255, 253, 248, 0.62);
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
     }
 
     .footer {
       padding: 34px 0;
-      background: #1f2e24;
-      color: rgba(255, 255, 255, 0.72);
+      background: #17221c;
+      color: rgba(255, 253, 248, 0.66);
     }
 
     .footer-inner {
       display: flex;
       justify-content: space-between;
-      gap: 20px;
-      width: min(1120px, calc(100% - 36px));
+      width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
+      gap: 20px;
       font-size: 0.92rem;
     }
 
-    @media (max-width: 940px) {
-      .nav {
-        min-height: 68px;
-      }
-
-      .nav-links {
-        gap: 14px;
-        font-size: 0.86rem;
-      }
-
-      .nav-links a:nth-child(3),
-      .nav-links a:nth-child(4) {
+    @media (max-width: 980px) {
+      .nav-links a:not(.button) {
         display: none;
       }
 
       .hero {
-        min-height: 88vh;
-        background-position: center left 42%;
+        min-height: 86svh;
+        background-position: center right 25%;
       }
 
-      .hero-note,
-      .focus-grid,
-      .process-grid,
+      .hero-inner {
+        min-height: calc(86svh - 188px);
+      }
+
+      .hero-metrics,
+      .signature,
       .team-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .section-head,
-      .intro-grid,
-      .approach-grid,
-      .cta-inner {
         grid-template-columns: 1fr;
       }
 
-      .section-head {
-        gap: 18px;
-        align-items: start;
+      .metric + .metric {
+        padding-left: 0;
+        border-top: 1px solid rgba(255, 253, 248, 0.22);
+        border-left: 0;
       }
 
-      .approach-grid {
-        gap: 32px;
+      .section-head,
+      .intro-layout,
+      .visual-grid,
+      .method-layout,
+      .cta-inner,
+      .split-showcase {
+        grid-template-columns: 1fr;
+      }
+
+      .area-card:nth-child(1),
+      .area-card:nth-child(2),
+      .area-card:nth-child(n+3) {
+        grid-column: span 6;
+      }
+
+      .method-sticky {
+        position: static;
       }
     }
 
     @media (max-width: 640px) {
       .site-header {
         position: absolute;
+        background: rgba(23, 34, 28, 0.34);
+      }
+
+      .nav,
+      .container,
+      .hero-inner,
+      .footer-inner {
+        width: min(100% - 28px, 1180px);
       }
 
       .nav {
-        width: min(100% - 28px, 1120px);
+        min-height: 68px;
       }
 
-      .brand span {
-        max-width: 168px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+      .brand {
+        font-size: 0.92rem;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
       }
 
       .nav-links {
@@ -730,25 +839,27 @@
       }
 
       .hero {
-        min-height: 88vh;
-        padding-top: 106px;
-        padding-bottom: 44px;
-        background-image:
-          linear-gradient(180deg, rgba(24, 35, 28, 0.74) 0%, rgba(24, 35, 28, 0.52) 58%, rgba(255, 250, 242, 0.08) 100%),
-          url("redesconectate_recursos_individuales/05_hero_desconecta_reconecta.png");
-        background-position: center;
+        min-height: 86svh;
+        padding-top: 98px;
+        padding-bottom: 42px;
+        background:
+          linear-gradient(180deg, rgba(20, 29, 24, 0.72), rgba(20, 29, 24, 0.58) 54%, rgba(20, 29, 24, 0.22)),
+          url("redesconectate_assets_v2/hero-terapia-malaga.png") center / cover no-repeat;
+      }
+
+      .hero-content {
+        padding-top: 18px;
       }
 
       h1 {
-        font-size: clamp(3.1rem, 16vw, 4.8rem);
+        font-size: clamp(3.35rem, 16vw, 5rem);
       }
 
-      .hero-copy p:not(.eyebrow) {
+      .hero-subtitle {
         font-size: 1rem;
       }
 
       .hero-actions {
-        align-items: stretch;
         flex-direction: column;
       }
 
@@ -756,56 +867,45 @@
         width: 100%;
       }
 
-      .hero-note {
+      .section {
+        padding: 70px 0;
+      }
+
+      .section-compact {
+        padding: 58px 0;
+      }
+
+      .section-head {
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .area-card:nth-child(1),
+      .area-card:nth-child(2),
+      .area-card:nth-child(n+3) {
+        grid-column: span 12;
+      }
+
+      .feature-image img {
+        min-height: 360px;
+      }
+
+      .feature-copy {
+        padding: 28px;
+      }
+
+      .step {
         grid-template-columns: 1fr;
-        margin-top: 40px;
+        gap: 14px;
+        padding: 24px;
       }
 
-      .hero-note span + span {
-        border-top: 1px solid rgba(255, 255, 255, 0.22);
-        border-left: 0;
-      }
-
-      .section,
-      .section-tight {
-        padding: 62px 0;
-      }
-
-      .container,
-      .hero-inner,
-      .footer-inner {
-        width: min(100% - 28px, 1120px);
-      }
-
-      .focus-grid,
-      .process-grid,
-      .team-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .focus-card,
-      .team-card,
-      .process-step {
+      .team-card {
         min-height: auto;
       }
 
-      .method-item {
-        grid-template-columns: 42px minmax(0, 1fr);
-        gap: 14px;
-      }
-
-      .method-mark {
-        width: 42px;
-        height: 42px;
-      }
-
-      .cta::before {
-        background-position: center;
-        background-size: cover;
-      }
-
-      .contact-panel {
-        padding: 22px;
+      .contact {
+        padding: 24px;
       }
 
       .footer-inner {
@@ -817,135 +917,190 @@
 <body>
   <header class="site-header" aria-label="Cabecera principal">
     <nav class="nav">
-      <a class="brand" href="#inicio" aria-label="Redesconéctate">
-        <img src="redesconectate_recursos_individuales/01_logo_redesconectate.png" alt="">
-        <span>Redesconéctate</span>
+      <a class="brand" href="#inicio" aria-label="Redesconecta">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <path d="M16 26c-4.8-3.4-7.2-7.2-7.2-11.1 0-3.3 2.6-6 5.7-6 1.1 0 2.1.4 2.9 1.1.8-.7 1.8-1.1 2.9-1.1 3.1 0 5.7 2.7 5.7 6 0 3.9-2.4 7.7-7.2 11.1H16Z"></path>
+            <path d="M16 26V12"></path>
+            <path d="M16 18c-3.7-.7-6.6-2.7-8.8-5.9"></path>
+            <path d="M16 18c3.7-.7 6.6-2.7 8.8-5.9"></path>
+          </svg>
+        </span>
+        <span>Redesconecta</span>
       </a>
       <div class="nav-links" aria-label="Navegación principal">
         <a href="#enfoque">Enfoque</a>
-        <a href="#servicios">Servicios</a>
+        <a href="#areas">Áreas</a>
+        <a href="#metodo">Método</a>
         <a href="#equipo">Equipo</a>
-        <a href="#proceso">Proceso</a>
-        <a class="button button-primary" href="#contacto">Primera cita</a>
+        <a class="button button-primary" style="padding: 8px" href="#contacto">Primera cita</a>
       </div>
     </nav>
   </header>
 
   <main id="inicio">
-    <section class="hero" aria-label="Redesconéctate">
+    <section class="hero" aria-label="Redesconecta">
       <div class="hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow">Psicología sanitaria en Málaga</p>
-          <h1>Redesconéctate</h1>
-          <p>Un espacio para bajar el ruido, comprender lo que te ocurre y recuperar una relación más amable contigo, con los demás y con la tecnología.</p>
+        <div class="hero-content">
+          <p class="kicker">Psicología sanitaria en Málaga</p>
+          <h1>Redesconecta</h1>
+          <p class="hero-subtitle">Un espacio para apagar el ruido, comprender tu malestar y recuperar una relación más consciente contigo, con los demás y con la tecnología.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#contacto">Solicitar primera cita</a>
-            <a class="button button-soft" href="#servicios">Ver áreas de trabajo</a>
+            <a class="button button-outline" href="#areas">Ver especialidades</a>
           </div>
         </div>
-        <div class="hero-note" aria-label="Servicios destacados">
-          <span>Terapia individual</span>
-          <span>Grupos y talleres</span>
-          <span>Acompañamiento familiar</span>
+        <div class="hero-metrics" aria-label="Resumen del centro">
+          <div class="metric">
+            <strong>Adultos, jóvenes e infancia</strong>
+            <span>Atención adaptada a cada etapa vital</span>
+          </div>
+          <div class="metric">
+            <strong>Terapia y psicoeducación</strong>
+            <span>Individual, grupal y familiar</span>
+          </div>
+          <div class="metric">
+            <strong>Bienestar digital</strong>
+            <span>Uso saludable de móvil, redes y videojuegos</span>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="enfoque" class="section intro">
-      <div class="container intro-grid">
-        <div class="intro-copy">
-          <p class="eyebrow">Desconectar para volver</p>
-          <h2>Un centro para los desafíos emocionales del mundo actual.</h2>
-          <p class="lead">En Redesconéctate acompañamos a adultos, jóvenes, infancia y familias en procesos de ansiedad, autoestima, regulación emocional, bienestar digital, adicciones, TCA e imagen corporal.</p>
-          <p>Trabajamos desde una mirada <strong>integral, cercana y basada en la evidencia</strong>: primero entendemos la historia y el contexto de cada persona; después construimos herramientas prácticas para recuperar autonomía y bienestar de forma duradera.</p>
-        </div>
-        <figure class="room-photo">
-          <img src="redesconectate_recursos_individuales/02_sala_terapia_calida.png" alt="Sala de terapia cálida con sillón, plantas y luz suave">
+      <div class="container intro-layout">
+        <figure class="intro-image">
+          <img src="redesconectate_assets_v2/autocompasion.png" alt="Persona en una sala cálida practicando autocompasión y escribiendo en un cuaderno">
         </figure>
-      </div>
-    </section>
-
-    <section id="servicios" class="section audiences">
-      <div class="container">
-        <div class="section-head">
-          <h2>Atención para cada etapa y necesidad.</h2>
-          <p>El malestar no siempre aparece de la misma forma. Por eso combinamos terapia individual, intervención familiar, trabajo grupal, psicoeducación, mindfulness y prevención.</p>
-        </div>
-        <div class="audience-strip">
-          <img src="redesconectate_recursos_individuales/03_iconos_publicos_objetivo.png" alt="Adultos, adolescentes y jóvenes, infancia, familias y bienestar">
-        </div>
-        <div class="focus-grid">
-          <article class="focus-card">
-            <h3>Ansiedad y regulación emocional</h3>
-            <p>Evaluación, estrategias de afrontamiento, manejo de síntomas, consumo de sustancias y prevención de recaídas.</p>
-          </article>
-          <article class="focus-card">
-            <h3>Autoestima, TCA e imagen corporal</h3>
-            <p>Intervención en dificultades alimentarias, comparación corporal, autoexigencia y valoración personal.</p>
-          </article>
-          <article class="focus-card">
-            <h3>Bienestar digital y nuevas tecnologías</h3>
-            <p>Uso problemático de móvil, redes sociales, videojuegos, apuestas online e impacto de la hiperconexión.</p>
-          </article>
-          <article class="focus-card">
-            <h3>Infancia, adolescencia y familias</h3>
-            <p>Orientación para límites, comunicación, presión académica y social, aislamiento y uso saludable de pantallas.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section approach">
-      <div class="container approach-grid">
-        <div class="approach-visual">
-          <img src="redesconectate_recursos_individuales/09_ilustracion_terapia_grupal.png" alt="Ilustración de una sesión de terapia grupal">
-          <img src="redesconectate_recursos_individuales/07_ilustracion_autocompasion.png" alt="Ilustración sobre autocompasión y cuidado personal">
-        </div>
-        <div>
-          <p class="eyebrow">Cómo trabajamos</p>
-          <h2>Rigor clínico con un vínculo humano real.</h2>
-          <div class="method-list">
-            <article class="method-item">
-              <span class="method-mark">01</span>
-              <div>
-                <h3>Evaluación inicial y plan individualizado</h3>
-                <p>Conocemos tu demanda, tu contexto y tus objetivos para proponer una intervención ajustada a tu momento vital.</p>
-              </div>
-            </article>
-            <article class="method-item">
-              <span class="method-mark">02</span>
-              <div>
-                <h3>Herramientas prácticas y psicoeducación</h3>
-                <p>Comprender el malestar ayuda a dejar de vivirlo como una amenaza y empezar a responder con recursos propios.</p>
-              </div>
-            </article>
-            <article class="method-item">
-              <span class="method-mark">03</span>
-              <div>
-                <h3>Mindfulness, autocompasión y hábitos saludables</h3>
-                <p>Entrenamos formas de parar, escucharte y construir una relación más consciente contigo y tu entorno.</p>
-              </div>
-            </article>
-            <article class="method-item">
-              <span class="method-mark">04</span>
-              <div>
-                <h3>Coordinación interna y cuidado continuado</h3>
-                <p>El equipo revisa los casos de forma periódica y facilita derivación especializada cuando es necesario.</p>
-              </div>
-            </article>
+        <div class="intro-panel">
+          <p class="kicker">Desconectar para volver</p>
+          <h2>Una forma de terapia pensada para el ritmo emocional de hoy.</h2>
+          <p>En Redesconecta trabajamos con ansiedad, autoestima, regulación emocional, TCA, imagen corporal, consumo de sustancias y dificultades asociadas a la hiperconexión.</p>
+          <p>No buscamos solo reducir síntomas. Queremos ayudarte a entender qué función tiene tu malestar, qué patrones lo mantienen y qué recursos puedes construir para vivir con más autonomía.</p>
+          <div class="signature" aria-label="Rasgos del enfoque">
+            <div class="signature-item">
+              <strong>Vínculo real</strong>
+              <span>Un espacio seguro, cercano y sin juicio.</span>
+            </div>
+            <div class="signature-item">
+              <strong>Rigor sanitario</strong>
+              <span>Intervenciones basadas en evidencia.</span>
+            </div>
+            <div class="signature-item">
+              <strong>Autonomía</strong>
+              <span>Herramientas prácticas para tu día a día.</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section-tight values" aria-label="Valores de Redesconéctate">
+    <section id="areas" class="section areas">
       <div class="container">
         <div class="section-head">
-          <h2>Valores que sostienen el proceso.</h2>
-          <p>Reconexión humana, aceptación, cercanía, autonomía, educación emocional y una práctica sanitaria responsable.</p>
+          <div>
+            <p class="kicker">Áreas de trabajo</p>
+            <h2>Especialización sin perder la mirada completa.</h2>
+          </div>
+          <p class="section-copy">Cada proceso se diseña tras una evaluación inicial. Integramos terapia individual, trabajo familiar, grupos, mindfulness y psicoeducación según lo que necesite cada persona.</p>
         </div>
-        <div class="values-panel">
-          <img src="redesconectate_recursos_individuales/04_valores_centro_psicologia.png" alt="Valores del centro: reconexión humana, integralidad, aceptación, cercanía, autonomía y prevención">
+        <div class="area-grid">
+          <article class="area-card">
+            <span class="area-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32"><path d="M6 19c0-6 4-11 10-11s10 5 10 11"></path><path d="M10 20c2.3 4 9.7 4 12 0"></path><path d="M11 13h.1M21 13h.1"></path></svg>
+            </span>
+            <h3>Ansiedad y regulación emocional</h3>
+            <p>Manejo de síntomas, afrontamiento, prevención de recaídas, consumo de sustancias y recuperación de funcionalidad.</p>
+          </article>
+          <article class="area-card">
+            <span class="area-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32"><path d="M16 26c-5-4-9-8-9-13a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5-4 9-9 13Z"></path></svg>
+            </span>
+            <h3>Autoestima, TCA e imagen corporal</h3>
+            <p>Intervención en dificultades alimentarias, autoexigencia, comparación social, presión corporal y valoración personal.</p>
+          </article>
+          <article class="area-card">
+            <span class="area-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32"><rect x="10" y="4" width="12" height="24" rx="3"></rect><path d="M14 24h4"></path><path d="M13 9h6"></path></svg>
+            </span>
+            <h3>Bienestar digital</h3>
+            <p>Uso problemático de móvil, redes sociales, videojuegos, apuestas online y dependencia de la comparación constante.</p>
+          </article>
+          <article class="area-card">
+            <span class="area-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32"><path d="M11 14a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"></path><path d="M22 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"></path><path d="M3 28c1-6 5-9 10-9s9 3 10 9"></path><path d="M18 21c4 0 7 2 8 7"></path></svg>
+            </span>
+            <h3>Familias e infancia</h3>
+            <p>Límites, comunicación, dificultades emocionales y conductuales, pantallas, presión académica y acompañamiento parental.</p>
+          </article>
+          <article class="area-card">
+            <span class="area-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32"><path d="M16 27V7"></path><path d="M16 19c-5.5 0-10-4.5-10-10 5.5 0 10 4.5 10 10Z"></path><path d="M16 21c5.5 0 10-4.5 10-10-5.5 0-10 4.5-10 10Z"></path></svg>
+            </span>
+            <h3>Mindfulness y autocompasión</h3>
+            <p>Prácticas para parar, escucharte y desarrollar una relación más amable con tus emociones, tus límites y tu cuerpo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section visual-band">
+      <div class="container visual-grid">
+        <figure class="feature-image">
+          <img src="redesconectate_assets_v2/terapia-grupal.png" alt="Ilustración de una sesión grupal en un centro de psicología cálido">
+        </figure>
+        <div class="feature-copy">
+          <p class="kicker">Terapia, grupos y talleres</p>
+          <h2>Aprender a mirar lo que pasa sin hacerlo sola.</h2>
+          <p>La terapia individual puede complementarse con grupos terapéuticos, orientación familiar y talleres preventivos para colegios y familias.</p>
+          <div class="feature-list" aria-label="Modalidades">
+            <span>Confidencialidad y escucha activa</span>
+            <span>Participación voluntaria y segura</span>
+            <span>Educación emocional aplicable</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="metodo" class="section method">
+      <div class="container method-layout">
+        <div class="method-sticky">
+          <p class="kicker">Método</p>
+          <h2>Un proceso claro desde la primera sesión.</h2>
+          <p class="section-copy">Trabajamos con cita previa, consentimiento informado y una evaluación inicial que permite definir objetivos terapéuticos realistas.</p>
+          <figure class="method-photo">
+            <img src="redesconectate_assets_v2/familias-taller.png" alt="Mesa de trabajo terapéutico con tarjetas en blanco y materiales de taller familiar">
+          </figure>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <span class="step-number">01</span>
+            <div>
+              <h3>Primera toma de contacto</h3>
+              <p>Escuchamos tu demanda, aclaramos expectativas y valoramos qué formato encaja mejor con tu situación.</p>
+            </div>
+          </article>
+          <article class="step">
+            <span class="step-number">02</span>
+            <div>
+              <h3>Evaluación y comprensión del caso</h3>
+              <p>Recogemos información relevante sobre tu historia, contexto, relaciones, hábitos y momento vital.</p>
+            </div>
+          </article>
+          <article class="step">
+            <span class="step-number">03</span>
+            <div>
+              <h3>Plan terapéutico individualizado</h3>
+              <p>Definimos objetivos, ritmo de trabajo y herramientas concretas para que el proceso tenga dirección.</p>
+            </div>
+          </article>
+          <article class="step">
+            <span class="step-number">04</span>
+            <div>
+              <h3>Seguimiento y coordinación interna</h3>
+              <p>Revisamos la evolución del caso en equipo y ajustamos la intervención cuando es necesario.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -953,12 +1108,12 @@
     <section id="equipo" class="section team">
       <div class="container">
         <div class="section-head">
-          <h2>Tres psicólogas, una mirada coordinada.</h2>
-          <p>Somos un equipo de psicólogas sanitarias con áreas complementarias para ofrecer una atención global y cercana.</p>
+          <div>
+            <p class="kicker">Equipo</p>
+            <h2>Tres áreas complementarias, una misma dirección.</h2>
+          </div>
+          <p class="section-copy">El equipo se coordina y supervisa internamente para ofrecer un acompañamiento cercano, personalizado y coherente.</p>
         </div>
-        <figure class="team-photo">
-          <img src="redesconectate_recursos_individuales/nuestro-equipo.png" alt="Equipo de Redesconéctate sentado en una sala cálida">
-        </figure>
         <div class="team-grid">
           <article class="team-card">
             <h3>Eugenia</h3>
@@ -979,65 +1134,34 @@
       </div>
     </section>
 
-    <section id="proceso" class="section process">
-      <div class="container">
-        <div class="section-head">
-          <h2>Un inicio claro, cuidado y confidencial.</h2>
-          <p>El centro funciona con cita previa, en horario de mañana y tarde, con sesiones individuales, grupales y familiares según cada caso.</p>
-        </div>
-        <div class="process-grid">
-          <article class="process-step">
-            <span>01</span>
-            <h3>Primera toma de contacto</h3>
-            <p>Recogemos tu demanda y valoramos qué tipo de acompañamiento puede ayudarte.</p>
-          </article>
-          <article class="process-step">
-            <span>02</span>
-            <h3>Evaluación</h3>
-            <p>Exploramos información relevante para comprender qué ocurre y qué función tiene el malestar.</p>
-          </article>
-          <article class="process-step">
-            <span>03</span>
-            <h3>Plan terapéutico</h3>
-            <p>Definimos objetivos realistas y una intervención adaptada a tus necesidades.</p>
-          </article>
-          <article class="process-step">
-            <span>04</span>
-            <h3>Seguimiento</h3>
-            <p>Revisamos avances, ajustamos recursos y cuidamos la confidencialidad durante todo el proceso.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section id="contacto" class="section cta">
       <div class="container cta-inner">
         <div>
-          <p class="eyebrow">Cita previa</p>
-          <h2>Cuando estés lista, empezamos por escucharte.</h2>
-          <p>Si buscas un espacio seguro para ordenar lo que te pasa, recuperar calma y crear hábitos emocionales más sanos, podemos acompañarte paso a paso.</p>
+          <p class="kicker">Cita previa</p>
+          <h2>Cuando quieras empezar, empezamos por escucharte.</h2>
+          <p>Un primer encuentro sirve para ordenar lo que ocurre, valorar necesidades y dibujar un plan terapéutico ajustado a tu vida real.</p>
           <div class="hero-actions">
-            <a class="button button-soft" href="mailto:info@redesconectate.es?subject=Solicitud%20de%20primera%20cita">Escribir al centro</a>
-            <a class="button button-primary" href="#inicio">Volver arriba</a>
+            <a class="button button-primary" href="mailto:info@redesconectate.es?subject=Solicitud%20de%20primera%20cita">Solicitar información</a>
+            <a class="button button-outline" href="#inicio">Volver arriba</a>
           </div>
         </div>
-        <aside class="contact-panel" aria-label="Información del centro">
-          <h3>Redesconéctate</h3>
-          <div class="contact-line">
+        <aside class="contact" aria-label="Información del centro">
+          <h3>Redesconecta</h3>
+          <div class="contact-row">
             <small>Ubicación</small>
             Málaga
           </div>
-          <div class="contact-line">
+          <div class="contact-row">
             <small>Modalidades</small>
             Individual, grupal y familiar
           </div>
-          <div class="contact-line">
+          <div class="contact-row">
             <small>Horario</small>
             Mañana y tarde con cita previa
           </div>
-          <div class="contact-line">
-            <small>Especialidades</small>
-            Ansiedad, autoestima, TCA, adicciones y bienestar digital
+          <div class="contact-row">
+            <small>Áreas</small>
+            Ansiedad, autoestima, TCA, bienestar digital y familias
           </div>
         </aside>
       </div>
@@ -1046,7 +1170,7 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <span>Redesconéctate · Psicología, bienestar y reconexión</span>
+      <span>Redesconecta · Psicología, bienestar y reconexión</span>
       <span>Centro de psicología sanitaria en Málaga</span>
     </div>
   </footer>
