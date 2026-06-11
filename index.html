@@ -39,6 +39,7 @@
       background: var(--paper);
       font-family: var(--sans);
       line-height: 1.55;
+      overflow-x: hidden;
       text-rendering: optimizeLegibility;
     }
 
@@ -134,12 +135,16 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      max-width: 100%;
+      min-width: 0;
       min-height: 48px;
       padding: 0 21px;
       border: 1px solid transparent;
       border-radius: 999px;
       font-weight: 800;
       line-height: 1;
+      text-align: center;
+      overflow-wrap: anywhere;
       transition: transform 170ms ease, box-shadow 170ms ease, background 170ms ease;
     }
 
@@ -177,7 +182,7 @@
       color: var(--porcelain);
       background:
         linear-gradient(90deg, rgba(20, 29, 24, 0.74) 0%, rgba(20, 29, 24, 0.56) 39%, rgba(20, 29, 24, 0.12) 74%),
-        url("redesconectate_assets_v2/hero-terapia-malaga.png") center / cover no-repeat;
+        url("redesconectate_assets_v2/hero-consulta-desconexion.png") center / cover no-repeat;
       isolation: isolate;
     }
 
@@ -196,12 +201,14 @@
       display: grid;
       align-content: center;
       width: min(1180px, calc(100% - 40px));
+      min-width: 0;
       min-height: calc(88svh - 188px);
       margin: 0 auto;
     }
 
     .hero-content {
       width: min(720px, 100%);
+      min-width: 0;
       padding-top: 40px;
     }
 
@@ -257,6 +264,69 @@
       flex-wrap: wrap;
       gap: 14px;
       margin-top: 34px;
+    }
+
+    @keyframes soft-rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes quiet-pulse {
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 253, 248, 0);
+      }
+
+      50% {
+        box-shadow: 0 0 0 8px rgba(255, 253, 248, 0.08);
+      }
+    }
+
+    @keyframes reveal-on-scroll {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-content,
+    .hero-metrics {
+      animation: soft-rise 720ms ease both;
+    }
+
+    .hero-metrics {
+      animation-delay: 140ms;
+    }
+
+    .brand-mark {
+      animation: quiet-pulse 4.8s ease-in-out infinite;
+    }
+
+    @supports (animation-timeline: view()) {
+      .section-head,
+      .intro-image,
+      .area-card,
+      .feature-image,
+      .feature-copy,
+      .step,
+      .team-card,
+      .contact {
+        animation: reveal-on-scroll both;
+        animation-timeline: view();
+        animation-range: entry 8% cover 26%;
+      }
     }
 
     .hero-metrics {
@@ -414,6 +484,13 @@
       border-radius: 8px;
       background: rgba(255, 253, 248, 0.82);
       box-shadow: 0 16px 46px rgba(28, 41, 34, 0.08);
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .area-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 253, 248, 0.94);
+      box-shadow: 0 24px 62px rgba(28, 41, 34, 0.13);
     }
 
     .area-card:nth-child(1),
@@ -509,6 +586,12 @@
       height: 100%;
       min-height: 520px;
       object-fit: cover;
+      transition: transform 700ms ease;
+    }
+
+    .feature-image:hover img,
+    .method-photo:hover img {
+      transform: scale(1.035);
     }
 
     .feature-copy {
@@ -579,6 +662,7 @@
       width: 100%;
       aspect-ratio: 5 / 4;
       object-fit: cover;
+      transition: transform 700ms ease;
     }
 
     .steps {
@@ -633,6 +717,12 @@
       border: 1px solid var(--line);
       border-radius: 8px;
       background: rgba(255, 253, 248, 0.78);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 22px 56px rgba(28, 41, 34, 0.1);
     }
 
     .team-card h3 {
@@ -844,7 +934,11 @@
         padding-bottom: 42px;
         background:
           linear-gradient(180deg, rgba(20, 29, 24, 0.72), rgba(20, 29, 24, 0.58) 54%, rgba(20, 29, 24, 0.22)),
-          url("redesconectate_assets_v2/hero-terapia-malaga.png") center / cover no-repeat;
+          url("redesconectate_assets_v2/hero-consulta-desconexion.png") center right 36% / cover no-repeat;
+      }
+
+      .hero-inner {
+        min-height: 0;
       }
 
       .hero-content {
@@ -852,7 +946,19 @@
       }
 
       h1 {
-        font-size: clamp(3.35rem, 16vw, 5rem);
+        max-width: 100%;
+        font-size: clamp(2.85rem, 13.2vw, 4rem);
+        line-height: 0.96;
+      }
+
+      .kicker {
+        gap: 8px;
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+      }
+
+      .kicker::before {
+        width: 22px;
       }
 
       .hero-subtitle {
@@ -860,11 +966,37 @@
       }
 
       .hero-actions {
+        width: min(100%, 326px);
         flex-direction: column;
+        gap: 10px;
+        margin-top: 26px;
       }
 
       .button {
         width: 100%;
+        min-height: 46px;
+        padding: 13px 16px;
+        line-height: 1.18;
+        white-space: normal;
+      }
+
+      .hero-metrics {
+        margin-top: 30px;
+        border-radius: 8px;
+        background: rgba(23, 34, 28, 0.22);
+        backdrop-filter: blur(10px);
+      }
+
+      .metric {
+        padding: 13px 14px;
+      }
+
+      .metric strong {
+        font-size: 1.04rem;
+      }
+
+      .metric span {
+        font-size: 0.8rem;
       }
 
       .section {
@@ -912,6 +1044,17 @@
         flex-direction: column;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 1ms !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -933,7 +1076,7 @@
         <a href="#areas">Áreas</a>
         <a href="#metodo">Método</a>
         <a href="#equipo">Equipo</a>
-        <a class="button button-primary" style="padding: 8px" href="#contacto">Primera cita</a>
+        <a class="button button-primary" href="#contacto">Primera cita</a>
       </div>
     </nav>
   </header>
